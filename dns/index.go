@@ -33,6 +33,7 @@ var (
 		rainyunEndpoint,
 		CloudnsEndpoint,
 		desecEndpoint,
+		dnsheBaseURL,
 	}
 
 	Ipcache = [][2]util.IpCache{}
@@ -120,6 +121,8 @@ func RunOnce() {
 			dnsSelected = &ClouDNS{}
 		case "desec":
 			dnsSelected = &DeSEC{}
+		case "dnshe":
+			dnsSelected = &DNSHE{}
 		default:
 			dnsSelected = &Alidns{}
 		}
