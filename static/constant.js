@@ -11,6 +11,18 @@ const DNS_PROVIDERS = {
       "zh-cn": "<a target='_blank' href='https://ram.console.aliyun.com/manage/ak?spm=5176.12818093.nav-right.dak.488716d0mHaMgg'>创建 AccessKey</a>",
     }
   },
+  dnshe: {
+    name: {
+      "en": "DNSHE",
+      "zh-cn": "DNSHE",
+    },
+    idLabel: "API Key",
+    secretLabel: "API Secret",
+    helpHtml: {
+      "en": "<a target='_blank' href='https://my.dnshe.com/'>DNSHE Free Domains</a> Create API Key / Secret in API Management",
+      "zh-cn": "<a target='_blank' href='https://my.dnshe.com/'>DNSHE 鍏嶈垂鍩熷悕</a> 鍦ㄣ€孉PI 绠＄悊銆嶄腑鍒涘缓 API Key / API Secret",
+    }
+  },
   aliesa: {
     name: {
       "en": "Aliyun ESA",
