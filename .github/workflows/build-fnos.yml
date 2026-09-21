@@ -1,0 +1,55 @@
+name: Build fnOS .fpk
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'ddns-go 版本号 (如 6.17.7)'
+        required: false
+        default: '6.17.7'
+      arch:
+        description: '目标架构 (arm64 / amd64)'
+        required: false
+        default: 'arm64'
+  push:
+    tags:
+      - 'fnos-v*'
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+
+      - name: Build & package
+        env:
+          VERSION: ${{ github.event.inputs.version || '6.17.7' }}
+          ARCH: ${{ github.event.inputs.arch || 'arm64' }}
+        run: |
+          chmod +x build-fnos.sh
+          ./build-fnos.sh "$ARCH" "$VERSION"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ddns-go_${{ env.ARCH }}.fpk
+          path: ddns-go_${{ env.ARCH }}.fpk
+
+      - name: Release (tag fnos-v*)
+        if: startsWith(github.ref, 'refs/tags/fnos-v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ddns-go_*.fpk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
