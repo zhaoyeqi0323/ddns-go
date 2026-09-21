@@ -1,0 +1,14 @@
+appname         = ddns-go
+version         = 6.17.7
+display_name    = DDNS-GO (DNSHE)
+platform        = arm64
+maintainer      = jeessy2
+maintainer_url  = https://github.com/jeessy2/ddns-go
+distributor     = zhaoyeqi0323
+distributor_url = https://github.com/zhaoyeqi0323/ddns-go
+desktop_uidir   = ui
+desktop_applaunchname = ddns-go.Application
+service_port    = 9876
+desc            = DDNS-GO 动态 DNS 工具，已集成 DNSHE（my.dnshe.com）免费域名服务商，支持 IPv4/IPv6 自动解析；通过 Web 界面配置，数据存于应用数据目录。
+source          = thirdparty
+checksum        = 
