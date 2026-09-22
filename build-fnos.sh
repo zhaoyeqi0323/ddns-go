@@ -27,6 +27,11 @@ echo "==> 写入版本号到 manifest"
 # 替换 manifest 中的 version 行（保留字段对齐）
 sed -i -E "s/^version[[:space:]]*=.*/version         = $VERSION/" "$FNOS_DIR/manifest"
 
+echo "==> 按架构写入 platform 字段"
+# 飞牛对 x86_64 的标识是 x86；arm64 保持一致
+if [ "$ARCH" = "amd64" ] || [ "$ARCH" = "x86_64" ]; then PLATFORM="x86"; else PLATFORM="$ARCH"; fi
+sed -i -E "s/^platform[[:space:]]*=.*/platform        = $PLATFORM/" "$FNOS_DIR/manifest"
+
 echo "==> 打包 $OUT"
 rm -f "$OUT"
 if command -v fnpack >/dev/null 2>&1; then
