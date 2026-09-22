@@ -8,7 +8,6 @@
 
 - [DDNS-GO](#ddns-go)
     - [特性](#特性)
-    - [DNSHE 域名服务商](#dnshe-域名服务商)
     - [系统中使用](#系统中使用)
     - [Docker中使用](#docker中使用)
     - [使用IPv6](#使用ipv6)
@@ -20,7 +19,7 @@
 ## 特性
 
 - 支持Mac、Windows、Linux系统，支持ARM、x86、RISC-V架构
-- 支持的域名服务商 `阿里云` `阿里云 ESA` `腾讯云` `Dnspod` `Cloudflare` `华为云` `Callback` `百度云` `Porkbun` `GoDaddy` `Namecheap` `NameSilo` `Dynadot` `DNSLA` `时代互联` `Eranet` `Tnethk` `Gcore` `EdgeOne` `IBM NS1 Connect` `雨云` `deSEC` `DNSHE`
+- 支持的域名服务商 `阿里云` `阿里云 ESA` `腾讯云` `Dnspod` `Cloudflare` `华为云` `Callback` `百度云` `Porkbun` `GoDaddy` `Namecheap` `NameSilo` `Dynadot` `DNSLA` `时代互联` `Eranet` `Tnethk` `Gcore` `EdgeOne` `IBM NS1 Connect` `雨云` `deSEC`
 - 支持接口/网卡/[命令](https://github.com/jeessy2/ddns-go/wiki/通过命令获取IP参考)获取IP
 - 支持以服务的方式运行
 - 默认间隔5分钟同步一次
@@ -35,15 +34,6 @@
 
 > [!NOTE]
 > 建议在启用公网访问时，使用 Nginx 等反向代理软件启用 HTTPS 访问，以保证安全性。[FAQ](https://github.com/jeessy2/ddns-go/wiki/FAQ)
-
-## DNSHE 域名服务商
-
-本 fork 在 [ddns-go](https://github.com/jeessy2/ddns-go) 基础上新增了 **DNSHE**（[my.dnshe.com](https://my.dnshe.com/)）免费域名服务商。
-
-- 免费域名后缀：`us.ci` `cc.cd` `de5.net` `ccwu.cc` 等；
-- 支持的记录类型：`A` `AAAA` `CNAME` `MX` `TXT` `NS` `SRV` `CAA`；
-- 获取密钥：登录 [my.dnshe.com](https://my.dnshe.com/) → 「**API 管理**」→ 创建 **API Key** 与 **API Secret**；
-- 在 ddns-go Web 界面：DNS 服务商选 `DNSHE`，`ID` 填 **API Key**，`Secret` 填 **API Secret**，域名填完整域名（如 `home.cc.cd`）。使用 IPv6 时请添加 `AAAA` 记录。
 
 ## 系统中使用
 
