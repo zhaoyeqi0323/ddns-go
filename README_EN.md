@@ -8,6 +8,7 @@ Automatically obtain your public IPv4 or IPv6 address and resolve it to the corr
 
 - [DDNS-GO](#ddns-go)
     - [Features](#features)
+    - [DNSHE provider](#dnshe-provider)
     - [Use in system](#use-in-system)
     - [Use in docker](#use-in-docker)
     - [Webhook](#webhook)
@@ -17,7 +18,7 @@ Automatically obtain your public IPv4 or IPv6 address and resolve it to the corr
 ## Features
 
 - Support Mac, Windows, Linux system, support ARM, x86, RISC-V architecture
-- Support domain service providers `Aliyun` `Aliyun ESA` `Tencent` `Dnspod` `Cloudflare` `Huawei` `Callback` `Baidu` `Porkbun` `GoDaddy` `Namecheap` `NameSilo` `Dynadot` `DNSLA` `Nowcn` `Eranet` `Gcore` `EdgeOne` `IBM NS1 Connect` `Rainyun` `deSEC`
+- Support domain service providers `Aliyun` `Aliyun ESA` `Tencent` `Dnspod` `Cloudflare` `Huawei` `Callback` `Baidu` `Porkbun` `GoDaddy` `Namecheap` `NameSilo` `Dynadot` `DNSLA` `Nowcn` `Eranet` `Gcore` `EdgeOne` `IBM NS1 Connect` `Rainyun` `deSEC` `DNSHE`
 - Support interface / netcard / command to get IP
 - Support running as a service
 - Default interval is 5 minutes
@@ -32,6 +33,15 @@ Automatically obtain your public IPv4 or IPv6 address and resolve it to the corr
 
 > [!NOTE]
 > If you enable public network access, it is recommended to use Nginx and other reverse proxy software to enable HTTPS access to ensure security.
+
+## DNSHE provider
+
+This fork adds the **DNSHE** ([my.dnshe.com](https://my.dnshe.com/)) free-domain DNS provider on top of [ddns-go](https://github.com/jeessy2/ddns-go).
+
+- Free domain suffixes: `us.ci` `cc.cd` `de5.net` `ccwu.cc`, etc.
+- Supported record types: `A` `AAAA` `CNAME` `MX` `TXT` `NS` `SRV` `CAA`
+- Get credentials: sign in at [my.dnshe.com](https://my.dnshe.com/) -> **API Management** -> create an **API Key** and an **API Secret**
+- In the ddns-go web UI: choose provider `DNSHE`, put the **API Key** in `ID` and the **API Secret** in `Secret`, then enter the full domain (e.g. `home.cc.cd`). For IPv6 use an `AAAA` record.
 
 ## Use in system
 
