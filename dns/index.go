@@ -33,8 +33,7 @@ var (
 		rainyunEndpoint,
 		CloudnsEndpoint,
 		desecEndpoint,
-		dnsheBaseURL,
-	}
+	
 
 	Ipcache = [][2]util.IpCache{}
 )
