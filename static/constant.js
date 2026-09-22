@@ -19,8 +19,8 @@ const DNS_PROVIDERS = {
     idLabel: "API Key",
     secretLabel: "API Secret",
     helpHtml: {
-      "en": "<a target='_blank' href='https://my.dnshe.com/'>DNSHE Free Domains</a> Create API Key / Secret in API Management",
-      "zh-cn": "<a target='_blank' href='https://my.dnshe.com/'>DNSHE 鍏嶈垂鍩熷悕</a> 鍦ㄣ€孉PI 绠＄悊銆嶄腑鍒涘缓 API Key / API Secret",
+      "en": "<a target='_blank' href='https://my.dnshe.com/'>DNSHE Free Domains</a> - Create API Key / API Secret in API Management (free suffixes: us.ci / cc.cd / de5.net / ccwu.cc)",
+      "zh-cn": "<a target='_blank' href='https://my.dnshe.com/'>DNSHE 免费域名</a> - 在「API 管理」创建 API Key / API Secret（免费后缀：us.ci / cc.cd / de5.net / ccwu.cc）",
     }
   },
   aliesa: {
